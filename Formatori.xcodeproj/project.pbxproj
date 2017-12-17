@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC621FE7022E0046D650 /* AppDelegate.swift */; };
+		DBC3DC651FE7022E0046D650 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC641FE7022E0046D650 /* ViewController.swift */; };
+		DBC3DC681FE7022E0046D650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC661FE7022E0046D650 /* Main.storyboard */; };
+		DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */; };
+		DBC3DC6D1FE7022E0046D650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */; };
+		DBC3DC701FE7022E0046D650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DBC3DC5F1FE7022E0046D650 /* Formatori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formatori.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC3DC621FE7022E0046D650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBC3DC641FE7022E0046D650 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBC3DC671FE7022E0046D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBC3DC6A1FE7022E0046D650 /* Formatori.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formatori.xcdatamodel; sourceTree = "<group>"; };
+		DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBC3DC6F1FE7022E0046D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBC3DC711FE7022E0046D650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBC3DC5C1FE7022E0046D650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBC3DC561FE7022E0046D650 = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC611FE7022E0046D650 /* Formatori */,
+				DBC3DC601FE7022E0046D650 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBC3DC601FE7022E0046D650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC5F1FE7022E0046D650 /* Formatori.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBC3DC611FE7022E0046D650 /* Formatori */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC621FE7022E0046D650 /* AppDelegate.swift */,
+				DBC3DC641FE7022E0046D650 /* ViewController.swift */,
+				DBC3DC661FE7022E0046D650 /* Main.storyboard */,
+				DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */,
+				DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */,
+				DBC3DC711FE7022E0046D650 /* Info.plist */,
+				DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */,
+			);
+			path = Formatori;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBC3DC5E1FE7022E0046D650 /* Formatori */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBC3DC741FE7022E0046D650 /* Build configuration list for PBXNativeTarget "Formatori" */;
+			buildPhases = (
+				DBC3DC5B1FE7022E0046D650 /* Sources */,
+				DBC3DC5C1FE7022E0046D650 /* Frameworks */,
+				DBC3DC5D1FE7022E0046D650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Formatori;
+			productName = Formatori;
+			productReference = DBC3DC5F1FE7022E0046D650 /* Formatori.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBC3DC571FE7022E0046D650 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Dani Tox";
+				TargetAttributes = {
+					DBC3DC5E1FE7022E0046D650 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DBC3DC5A1FE7022E0046D650 /* Build configuration list for PBXProject "Formatori" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBC3DC561FE7022E0046D650;
+			productRefGroup = DBC3DC601FE7022E0046D650 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBC3DC5E1FE7022E0046D650 /* Formatori */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBC3DC5D1FE7022E0046D650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC3DC701FE7022E0046D650 /* LaunchScreen.storyboard in Resources */,
+				DBC3DC6D1FE7022E0046D650 /* Assets.xcassets in Resources */,
+				DBC3DC681FE7022E0046D650 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBC3DC5B1FE7022E0046D650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC3DC651FE7022E0046D650 /* ViewController.swift in Sources */,
+				DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */,
+				DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DBC3DC661FE7022E0046D650 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBC3DC671FE7022E0046D650 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBC3DC6F1FE7022E0046D650 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBC3DC721FE7022E0046D650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DBC3DC731FE7022E0046D650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBC3DC751FE7022E0046D650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				INFOPLIST_FILE = Formatori/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Formatori;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBC3DC761FE7022E0046D650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				INFOPLIST_FILE = Formatori/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Formatori;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBC3DC5A1FE7022E0046D650 /* Build configuration list for PBXProject "Formatori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC3DC721FE7022E0046D650 /* Debug */,
+				DBC3DC731FE7022E0046D650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBC3DC741FE7022E0046D650 /* Build configuration list for PBXNativeTarget "Formatori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC3DC751FE7022E0046D650 /* Debug */,
+				DBC3DC761FE7022E0046D650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DBC3DC6A1FE7022E0046D650 /* Formatori.xcdatamodel */,
+			);
+			currentVersion = DBC3DC6A1FE7022E0046D650 /* Formatori.xcdatamodel */;
+			path = Formatori.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DBC3DC571FE7022E0046D650 /* Project object */;
+}
