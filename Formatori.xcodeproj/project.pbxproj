@@ -13,6 +13,10 @@
 		DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */; };
 		DBC3DC6D1FE7022E0046D650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */; };
 		DBC3DC701FE7022E0046D650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */; };
+		DBC3DC7A1FE703910046D650 /* RoundThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC791FE703910046D650 /* RoundThings.swift */; };
+		DBC3DC7E1FE707A30046D650 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC7D1FE707A30046D650 /* Auth.swift */; };
+		DBC3DC801FE707B80046D650 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC7F1FE707B80046D650 /* Response.swift */; };
+		DBC3DC821FE708BC0046D650 /* Formatore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC811FE708BC0046D650 /* Formatore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBC3DC6F1FE7022E0046D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBC3DC711FE7022E0046D650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC3DC791FE703910046D650 /* RoundThings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundThings.swift; sourceTree = "<group>"; };
+		DBC3DC7D1FE707A30046D650 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		DBC3DC7F1FE707B80046D650 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		DBC3DC811FE708BC0046D650 /* Formatore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC3DC611FE7022E0046D650 /* Formatori */,
+				DBC3DC771FE702420046D650 /* Supporting Files */,
 				DBC3DC601FE7022E0046D650 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +65,50 @@
 		DBC3DC611FE7022E0046D650 /* Formatori */ = {
 			isa = PBXGroup;
 			children = (
-				DBC3DC621FE7022E0046D650 /* AppDelegate.swift */,
-				DBC3DC641FE7022E0046D650 /* ViewController.swift */,
+				DBC3DC7C1FE707870046D650 /* View Controllers */,
+				DBC3DC7B1FE7077F0046D650 /* Model */,
+				DBC3DC781FE703790046D650 /* Views */,
 				DBC3DC661FE7022E0046D650 /* Main.storyboard */,
-				DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */,
-				DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */,
 				DBC3DC711FE7022E0046D650 /* Info.plist */,
-				DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */,
 			);
 			path = Formatori;
+			sourceTree = "<group>";
+		};
+		DBC3DC771FE702420046D650 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC621FE7022E0046D650 /* AppDelegate.swift */,
+				DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */,
+				DBC3DC6E1FE7022E0046D650 /* LaunchScreen.storyboard */,
+				DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBC3DC781FE703790046D650 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC791FE703910046D650 /* RoundThings.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBC3DC7B1FE7077F0046D650 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC7D1FE707A30046D650 /* Auth.swift */,
+				DBC3DC7F1FE707B80046D650 /* Response.swift */,
+				DBC3DC811FE708BC0046D650 /* Formatore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBC3DC7C1FE707870046D650 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3DC641FE7022E0046D650 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC3DC7E1FE707A30046D650 /* Auth.swift in Sources */,
 				DBC3DC651FE7022E0046D650 /* ViewController.swift in Sources */,
+				DBC3DC7A1FE703910046D650 /* RoundThings.swift in Sources */,
 				DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */,
+				DBC3DC821FE708BC0046D650 /* Formatore.swift in Sources */,
+				DBC3DC801FE707B80046D650 /* Response.swift in Sources */,
 				DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
