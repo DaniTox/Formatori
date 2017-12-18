@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Response : Encodable {
+class Response : Decodable {
     
-    var code : Int!
+    var code : String!
     var message : String!
     var formatore : Formatore?
     
