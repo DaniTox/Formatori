@@ -9,14 +9,22 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(formatore?.nome ?? "ERRORe")
+        print(formatore?.nome ?? "No formatore")
         if formatore == nil {
-            self.performSegue(withIdentifier: "showLogin", sender: self)
+            print("is main thread? \(Thread.isMainThread)")
+            
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showLogin", sender: self)
+            }
         }
-        view.backgroundColor = UIColor.white
+        
+        print("Still here")
     }
 
     override func didReceiveMemoryWarning() {

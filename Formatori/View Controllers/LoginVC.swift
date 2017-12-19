@@ -17,6 +17,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("LoginVC loaded")
         auther = Auth()
         auther?.delegate = self
     }
@@ -38,7 +39,8 @@ extension LoginVC : responseDelegate {
         if code == 0 {
             print("LOGGATO COME: \(formatore?.nome ?? "ERROR")")
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "segueHome", sender: self)
+//                self.performSegue(withIdentifier: "segueHome", sender: self)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         else {

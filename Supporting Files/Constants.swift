@@ -9,6 +9,7 @@
 import UIKit
 
 var formatore : Formatore? {
+    print("Getting formatore... is in Main Thread? \(Thread.isMainThread)")
     if let data = UserDefaults.standard.data(forKey: "formatore") {
         if let temp = try? JSONDecoder().decode(Formatore.self, from: data) {
             return temp
@@ -26,3 +27,32 @@ extension UIViewController {
         return alert
     }
 }
+
+
+let materie : [String] = [
+    "Italiano",
+    "Matematica",
+    "Inglese",
+    "Informatica",
+    "Scienze",
+    "IRC",
+    "Diritto",
+    "Att. Motoria",
+    "Economia",
+    "Disegno Elettrico",
+    "Narrativa",
+    "Elettrotecnica",
+    "Lab. Elettrico",
+    "Tecnologia Elettrica",
+    "Sicurezza",
+    "Impianti",
+    "Automazione",
+    "Meccanica",
+    "PLC",
+    "Elettronica",
+    "Sistemi",
+    "CAD CAM",
+    "Comunicazione",
+    "Disegno Meccanico",
+    "Tecnologia Motoristica"
+]
