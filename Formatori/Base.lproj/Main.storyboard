@@ -176,16 +176,162 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark" translatesAutoresizingMaskIntoConstraints="NO" id="9os-7v-FAP">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-lF-CNk">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Materia selezionata: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-Zp-wTg">
+                                        <rect key="frame" x="90" y="25" width="829" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleziona una classe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ok-kr-92O">
+                                        <rect key="frame" x="356" y="78" width="296" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Argomento della verifica" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-2w-dqY">
+                                        <rect key="frame" x="340" y="282" width="312" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-fa-T0z">
+                                        <rect key="frame" x="220" y="337" width="569" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data della verifica" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2w-BA-gpN">
+                                        <rect key="frame" x="362" y="386" width="284" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5m-qA-lbx">
+                                        <rect key="frame" x="443" y="141" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="2E"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="nE4-pj-KZk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyl-gb-8oZ">
+                                        <rect key="frame" x="511" y="141" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="3E"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="U5X-v2-7Fv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-jd-KhU">
+                                        <rect key="frame" x="581" y="141" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="4E"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="RGt-fU-PGD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUX-dy-xcN">
+                                        <rect key="frame" x="371" y="209" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="1M"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="hXZ-bh-9CJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZb-Cf-6vw">
+                                        <rect key="frame" x="443" y="209" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="2M"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="XEb-XS-N4t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-Pu-iAW">
+                                        <rect key="frame" x="511" y="209" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="3M"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="Syg-xZ-Xsk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N28-cN-z5O">
+                                        <rect key="frame" x="581" y="209" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="4M"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="XFd-OR-5Wp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hck-xF-F4B">
+                                        <rect key="frame" x="371" y="141" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="1E"/>
+                                        <connections>
+                                            <action selector="classeBtnTouched:" destination="f6S-tL-H8q" eventType="touchUpInside" id="E2L-bX-yR3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqj-iR-NYR" customClass="RoundButton" customModule="Formatori" customModuleProvider="target">
+                                        <rect key="frame" x="443" y="639" width="126" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <state key="normal" title="Crea">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="createVerifica:" destination="f6S-tL-H8q" eventType="touchUpInside" id="4lR-u4-vPA"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ce4-0W-LRA">
+                                        <rect key="frame" x="-8" y="428" width="1024" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="535409310.96437502">
+                                            <!--2017-12-19 20:48:30 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5fe-lF-CNk" firstAttribute="trailing" secondItem="Ayg-cV-5YZ" secondAttribute="trailing" id="7uc-QM-FfH"/>
                             <constraint firstItem="9os-7v-FAP" firstAttribute="leading" secondItem="Ayg-cV-5YZ" secondAttribute="leading" id="8rH-U2-IxD"/>
                             <constraint firstItem="Ayg-cV-5YZ" firstAttribute="trailing" secondItem="9os-7v-FAP" secondAttribute="trailing" id="99T-Lk-AUN"/>
+                            <constraint firstItem="5fe-lF-CNk" firstAttribute="leading" secondItem="Ayg-cV-5YZ" secondAttribute="leading" id="Fmb-ig-6If"/>
                             <constraint firstItem="Ayg-cV-5YZ" firstAttribute="bottom" secondItem="9os-7v-FAP" secondAttribute="bottom" id="WvW-wd-gP9"/>
                             <constraint firstItem="9os-7v-FAP" firstAttribute="top" secondItem="RXr-7Q-23E" secondAttribute="top" id="XGo-bJ-gYF"/>
+                            <constraint firstItem="5fe-lF-CNk" firstAttribute="top" secondItem="Ayg-cV-5YZ" secondAttribute="top" id="r9q-aX-CRj"/>
+                            <constraint firstItem="5fe-lF-CNk" firstAttribute="bottom" secondItem="Ayg-cV-5YZ" secondAttribute="bottom" id="rzL-HD-Efc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ayg-cV-5YZ"/>
                     </view>
+                    <connections>
+                        <outlet property="argomentoTextField" destination="JuV-fa-T0z" id="NZ5-VS-Xof"/>
+                        <outlet property="datePicker" destination="ce4-0W-LRA" id="MaZ-wZ-SUQ"/>
+                        <outlet property="materiaSelLabel" destination="3Ks-Zp-wTg" id="Wea-fP-oEJ"/>
+                        <outletCollection property="classiOutlets" destination="Hck-xF-F4B" collectionClass="NSMutableArray" id="6er-QH-g5Y"/>
+                        <outletCollection property="classiOutlets" destination="N5m-qA-lbx" collectionClass="NSMutableArray" id="egS-b0-mE1"/>
+                        <outletCollection property="classiOutlets" destination="iyl-gb-8oZ" collectionClass="NSMutableArray" id="OkA-Ju-3md"/>
+                        <outletCollection property="classiOutlets" destination="9Nd-jd-KhU" collectionClass="NSMutableArray" id="Kg0-yr-rYU"/>
+                        <outletCollection property="classiOutlets" destination="YUX-dy-xcN" collectionClass="NSMutableArray" id="XwS-Gt-Edx"/>
+                        <outletCollection property="classiOutlets" destination="GZb-Cf-6vw" collectionClass="NSMutableArray" id="qdD-2M-7iZ"/>
+                        <outletCollection property="classiOutlets" destination="eMi-Pu-iAW" collectionClass="NSMutableArray" id="sqN-fI-2kh"/>
+                        <outletCollection property="classiOutlets" destination="N28-cN-z5O" collectionClass="NSMutableArray" id="Weq-Gt-QEt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9R-nE-amW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
