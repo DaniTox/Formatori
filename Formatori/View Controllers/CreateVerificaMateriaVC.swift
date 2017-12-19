@@ -11,6 +11,11 @@ import UIKit
 class CreateVerificaMateriaVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var materiaSelezionata : String? {
+        didSet {
+            print("Materia Selezionata: \(materiaSelezionata ?? "Error")")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +27,18 @@ class CreateVerificaMateriaVC: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "continueCreating" {
+            if let vc = segue.destination as? CreateVerificaFinalVC {
+                vc.materiaSelezionata = materiaSelezionata
+            }
+        }
     }
-    */
+ 
 
 }
 
@@ -48,5 +56,12 @@ extension CreateVerificaMateriaVC : UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        materiaSelezionata = materie[indexPath.row]
+        
+        if materiaSelezionata != nil {
+            self.performSegue(withIdentifier: "continueCreating", sender: self)
+        }
+    }
     
 }

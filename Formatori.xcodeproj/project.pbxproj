@@ -22,6 +22,7 @@
 		DBC3DC881FE925CF0046D650 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC871FE925CF0046D650 /* HomeVC.swift */; };
 		DBD401C11FE99FE500F0D599 /* CreateVerificaMateriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401C01FE99FE500F0D599 /* CreateVerificaMateriaVC.swift */; };
 		DBD401C31FE9A2BE00F0D599 /* VerificheCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401C21FE9A2BE00F0D599 /* VerificheCollCell.swift */; };
+		DBD401C51FE9A71B00F0D599 /* CreateVerificaFinalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401C41FE9A71B00F0D599 /* CreateVerificaFinalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DBC3DC871FE925CF0046D650 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DBD401C01FE99FE500F0D599 /* CreateVerificaMateriaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVerificaMateriaVC.swift; sourceTree = "<group>"; };
 		DBD401C21FE9A2BE00F0D599 /* VerificheCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificheCollCell.swift; sourceTree = "<group>"; };
+		DBD401C41FE9A71B00F0D599 /* CreateVerificaFinalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVerificaFinalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				DBC3DC641FE7022E0046D650 /* LoginVC.swift */,
 				DBC3DC871FE925CF0046D650 /* HomeVC.swift */,
 				DBD401C01FE99FE500F0D599 /* CreateVerificaMateriaVC.swift */,
+				DBD401C41FE9A71B00F0D599 /* CreateVerificaFinalVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */,
 				DBC3DC821FE708BC0046D650 /* Formatore.swift in Sources */,
 				DBC3DC801FE707B80046D650 /* Response.swift in Sources */,
+				DBD401C51FE9A71B00F0D599 /* CreateVerificaFinalVC.swift in Sources */,
 				DBD401C11FE99FE500F0D599 /* CreateVerificaMateriaVC.swift in Sources */,
 				DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */,
 				DBD401C31FE9A2BE00F0D599 /* VerificheCollCell.swift in Sources */,
