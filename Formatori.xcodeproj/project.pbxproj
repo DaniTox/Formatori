@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC621FE7022E0046D650 /* AppDelegate.swift */; };
-		DBC3DC651FE7022E0046D650 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC641FE7022E0046D650 /* ViewController.swift */; };
+		DBC3DC651FE7022E0046D650 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC641FE7022E0046D650 /* LoginVC.swift */; };
 		DBC3DC681FE7022E0046D650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC661FE7022E0046D650 /* Main.storyboard */; };
 		DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC691FE7022E0046D650 /* Formatori.xcdatamodeld */; };
 		DBC3DC6D1FE7022E0046D650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */; };
@@ -19,12 +19,13 @@
 		DBC3DC821FE708BC0046D650 /* Formatore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC811FE708BC0046D650 /* Formatore.swift */; };
 		DBC3DC841FE833440046D650 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC831FE833440046D650 /* Links.swift */; };
 		DBC3DC861FE8380E0046D650 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC851FE8380E0046D650 /* Constants.swift */; };
+		DBC3DC881FE925CF0046D650 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC871FE925CF0046D650 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DBC3DC5F1FE7022E0046D650 /* Formatori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formatori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC3DC621FE7022E0046D650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBC3DC641FE7022E0046D650 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBC3DC641FE7022E0046D650 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DBC3DC671FE7022E0046D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBC3DC6A1FE7022E0046D650 /* Formatori.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formatori.xcdatamodel; sourceTree = "<group>"; };
 		DBC3DC6C1FE7022E0046D650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		DBC3DC811FE708BC0046D650 /* Formatore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatore.swift; sourceTree = "<group>"; };
 		DBC3DC831FE833440046D650 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		DBC3DC851FE8380E0046D650 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DBC3DC871FE925CF0046D650 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +114,8 @@
 		DBC3DC7C1FE707870046D650 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DBC3DC641FE7022E0046D650 /* ViewController.swift */,
+				DBC3DC641FE7022E0046D650 /* LoginVC.swift */,
+				DBC3DC871FE925CF0046D650 /* HomeVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,7 +193,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC3DC7E1FE707A30046D650 /* Auth.swift in Sources */,
-				DBC3DC651FE7022E0046D650 /* ViewController.swift in Sources */,
+				DBC3DC881FE925CF0046D650 /* HomeVC.swift in Sources */,
+				DBC3DC651FE7022E0046D650 /* LoginVC.swift in Sources */,
 				DBC3DC7A1FE703910046D650 /* RoundThings.swift in Sources */,
 				DBC3DC6B1FE7022E0046D650 /* Formatori.xcdatamodeld in Sources */,
 				DBC3DC821FE708BC0046D650 /* Formatore.swift in Sources */,

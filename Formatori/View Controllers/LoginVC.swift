@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController {
 
     @IBOutlet weak var usernameTextF: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -33,14 +33,20 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : responseDelegate {
+extension LoginVC : responseDelegate {
     func loginDidFinish(with code: Int, and message: String?) {
         if code == 0 {
             print("LOGGATO COME: \(formatore?.nome ?? "ERROR")")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "segueHome", sender: self)
+            }
         }
         else {
             let alert = getAlert(title: "Errore", message: message!)
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
     }
 }
