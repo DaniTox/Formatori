@@ -10,4 +10,5 @@ import Foundation
 
 class Links {
     static var login = "http://192.168.1.12/DBApp-Backend/formatori/login.php"
+	static var createVerifica = "http://192.168.1.12/DBApp-Backend/formatori/createVerifica.php"
 }
