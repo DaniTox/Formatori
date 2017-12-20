@@ -68,3 +68,17 @@ class CreateVerificaFinalVC: UIViewController {
     */
 
 }
+
+extension CreateVerificaFinalVC : LoaderDelegate {
+    func didCreateVerificaWithReturnCode(_ code: Int, and message: String?) {
+        if code == 1 {
+            let alert = getAlert(title: "Errore", message: message ?? "NO RETURN VALUE ERRORE")
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
+        }
+    }
+}
+
