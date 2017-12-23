@@ -37,7 +37,10 @@ class VerificheVC: UIViewController {
         tableView.reloadData()
     }
     
-
+    @IBAction func backAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
@@ -63,7 +66,13 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let ver = correctVerifiche[indexPath.row]
+        if editingStyle == .delete {
+            loader?.removeVerifica(id: ver.idVerifica)
+
+        }
+    }
     
 }
 
@@ -92,6 +101,29 @@ extension VerificheVC : LoaderDelegate {
         }
     }
     
+    func didRemoveVerificaWith(code: Int, andMsg message: String?) {
+        if code == 0 {
+            let alert = getAlert(title: "Successo", message: "La verifica è stata completata con successo!")
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+                self.tableView.reloadData()
+            }
+        }
+        else {
+            if let msg = message {
+                let alert = getAlert(title: "Errore", message: msg)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            else {
+                let alert = getAlert(title: "Errore", message: "Errore generico. Nessun messaggio dal server. delegate.didRemoveVerificaWith()")
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     
 }
 

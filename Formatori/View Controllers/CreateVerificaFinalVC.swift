@@ -98,7 +98,15 @@ extension CreateVerificaFinalVC : LoaderDelegate {
             }
         }
         else {
-            print("Verifica creata con successo")
+            let alert = UIAlertController(title: "Completato", message: "La verifica è stata creata con successo", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] (action) in
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            }))
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

@@ -36,7 +36,10 @@ class CreateVerificaMateriaVC: UIViewController {
         }
     }
  
-
+    @IBAction func backAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension CreateVerificaMateriaVC : UICollectionViewDelegate, UICollectionViewDataSource {

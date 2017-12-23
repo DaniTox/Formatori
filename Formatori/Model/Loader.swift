@@ -14,7 +14,8 @@ class Loader {
     
     func createVerifica(materia: String, argomento: String, classe: String, data: Date) {
         if materia.isEmpty || argomento.isEmpty || classe.isEmpty || formatore?.token == nil { return }
-        let link = "\(Links.createVerifica)?materia=\(materia)&titolo=\(argomento)&classe=\(classe)&data=\(data.string)&token=\(formatore!.token!)"
+        guard let arg = argomento.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed) else { print("Errore converting path: createVerifica"); return }
+        let link = "\(Links.createVerifica)?materia=\(materia)&titolo=\(arg)&classe=\(classe)&data=\(data.string)&token=\(formatore!.token!)"
         guard let url = URL(string: link) else { print("Error link: \(link)"); return }
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             guard let data = data else { return }
@@ -57,12 +58,32 @@ class Loader {
     }
     
     
+    func removeVerifica(id: Int) {
+        if formatore?.token == nil { return }
+        let link = "\(Links.removeVerifica)?idVerifica=\(id)&token=\(formatore!.token!)"
+        guard let url = URL(string: link) else { print("Error link: \(link)"); return }
+        
+        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let data = data else { return }
+            
+            let json = try? JSONDecoder().decode(Response.self, from: data)
+            if json?.code != "200" {
+                self?.delegate?.didRemoveVerificaWith!(code: 1, andMsg: json?.message)
+                print("Delegate send this msg: \(json?.message ?? "nil")")
+            }
+            else {
+                self?.delegate?.didRemoveVerificaWith!(code: 0, andMsg: nil)
+            }
+        }.resume()
+    }
+    
 }
 
 
 @objc protocol LoaderDelegate {
     @objc optional func didCreateVerificaWithReturnCode(_ code : Int, and message: String?)
     @objc optional func didFinishLoadVerificheWith(_ code: Int, and message: String?)
+    @objc optional func didRemoveVerificaWith(code: Int, andMsg message: String?)
 }
 
 
