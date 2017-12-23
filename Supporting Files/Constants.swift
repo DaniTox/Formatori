@@ -8,6 +8,8 @@
 
 import UIKit
 
+var verifiche : [Verifica] = []
+
 var formatore : Formatore? {
     print("Getting formatore... is in Main Thread? \(Thread.isMainThread)")
     if let data = UserDefaults.standard.data(forKey: "formatore") {
@@ -25,6 +27,18 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         return alert
+    }
+}
+
+extension Date {
+    var string : String {
+        let c = Calendar.current
+        let day = c.component(.day, from: self)
+        let month = c.component(.month, from: self)
+        let year = c.component(.year, from: self)
+        
+        let str = "\(day)-\(month)-\(year)"
+        return str
     }
 }
 

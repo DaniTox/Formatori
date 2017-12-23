@@ -13,6 +13,6 @@ class Response : Decodable {
     var code : String!
     var message : String!
     var formatore : Formatore?
-    
+    var verifiche : [Verifica]?
     
 }

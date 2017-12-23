@@ -23,18 +23,31 @@ class CreateVerificaFinalVC: UIViewController {
     }
     
     @IBOutlet weak var materiaSelLabel: UILabel!
-    
     @IBOutlet var classiOutlets: [UIButton]!
-    
     @IBOutlet weak var argomentoTextField: UITextField!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var materia : String? {
+        return materiaSelezionata
+    }
+    var classe : String? {
+        return classeSelezionata
+    }
+    var argomento : String? {
+        return argomentoTextField.text
+    }
+    var date : Date {
+        return datePicker.date
+    }
+    
+    var loader : Loader?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         materiaSelLabel.text = "Materia selezionata: \(materiaSelezionata ?? "ERRORE")"
+        loader = Loader()
+        loader?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,9 +64,16 @@ class CreateVerificaFinalVC: UIViewController {
     
     
     @IBAction func createVerifica(_ sender: UIButton) {
-        let date = datePicker.date
-        let string = date.description(with: Locale.current)
-        print(string)
+        if checkInput() != 0 { return }
+        print("Creo verifica...")
+        loader?.createVerifica(materia: materia!, argomento: argomento!, classe: classe!, data: date)
+    }
+    
+    private func checkInput() -> Int {
+        let calendar = Calendar.current
+        if materia == nil || classe == nil || (argomento == nil || (argomento?.isEmpty)! ) { return 1 }
+        if calendar.isDateInYesterday(date) || Date() > date { return 1 }
+        return 0
     }
     
     
@@ -76,8 +96,9 @@ extension CreateVerificaFinalVC : LoaderDelegate {
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
             }
-            
-            
+        }
+        else {
+            print("Verifica creata con successo")
         }
     }
 }
