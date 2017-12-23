@@ -33,7 +33,7 @@ class Loader {
     
     func loadMyVerifiche() {
         if formatore?.token == nil { return }
-        let link = "\(Links.loadVerifiche)?token=\(formatore!.token)"
+        let link = "\(Links.loadVerifiche)?token=\(formatore!.token!)"
         guard let url = URL(string: link) else { print("Error Link: \(link)"); return }
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             guard let data = data else { return }
@@ -48,7 +48,9 @@ class Loader {
                     verifiche = tempVer
                     self?.delegate?.didFinishLoadVerificheWith!(0, and: nil)
                 }
-                self?.delegate?.didFinishLoadVerificheWith!(1, and: "Errore indefinito. loadMyverifiche()")
+                else {
+                    self?.delegate?.didFinishLoadVerificheWith!(1, and: "Errore indefinito. loadMyverifiche()")
+                }
             }
             
         }.resume()

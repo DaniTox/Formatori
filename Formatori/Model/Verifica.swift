@@ -16,4 +16,6 @@ class Verifica : Encodable, Decodable {
     var data : String!
     var classe : String!
     
+    
 }
+

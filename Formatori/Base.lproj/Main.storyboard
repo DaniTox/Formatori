@@ -448,7 +448,7 @@
                                         <rect key="frame" x="0.0" y="28" width="1024" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ds-VD-Oep" id="jVK-aM-RRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="131.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG2-F8-e9Q">
@@ -457,17 +457,7 @@
                                                         <constraint firstAttribute="width" secondItem="yG2-F8-e9Q" secondAttribute="height" multiplier="409:48" id="Wqd-uy-LEQ"/>
                                                         <constraint firstAttribute="height" constant="50" id="eBy-wR-KLO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4l-1d-auC">
-                                                    <rect key="frame" x="15" y="71" width="465" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="G4l-1d-auC" secondAttribute="height" multiplier="409:44" id="BDH-mj-6xh"/>
-                                                        <constraint firstAttribute="height" constant="50" id="t8t-30-Uif"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -481,22 +471,32 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4l-1d-auC">
+                                                    <rect key="frame" x="15" y="71" width="486" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="G4l-1d-auC" secondAttribute="height" multiplier="243:25" id="Del-Vc-nV8"/>
+                                                        <constraint firstAttribute="height" constant="50" id="SKh-xD-KGw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G4l-1d-auC" secondAttribute="trailingMargin" id="0Wk-b7-yu8"/>
                                                 <constraint firstItem="bjt-cZ-Eaz" firstAttribute="trailing" secondItem="jVK-aM-RRq" secondAttribute="trailingMargin" id="3GZ-dY-PGk"/>
-                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="G4l-1d-auC" secondAttribute="trailingMargin" constant="552" id="Eg1-JK-vBb"/>
                                                 <constraint firstItem="yG2-F8-e9Q" firstAttribute="top" secondItem="jVK-aM-RRq" secondAttribute="topMargin" id="H3J-nG-FiM"/>
                                                 <constraint firstItem="bjt-cZ-Eaz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jVK-aM-RRq" secondAttribute="leadingMargin" id="PcV-z0-e3o"/>
                                                 <constraint firstItem="yG2-F8-e9Q" firstAttribute="leading" secondItem="jVK-aM-RRq" secondAttribute="leadingMargin" id="SEZ-78-Hrq"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yG2-F8-e9Q" secondAttribute="trailingMargin" id="SHh-EK-sz0"/>
-                                                <constraint firstItem="G4l-1d-auC" firstAttribute="leading" secondItem="jVK-aM-RRq" secondAttribute="leadingMargin" id="bd6-WJ-gIY"/>
+                                                <constraint firstItem="G4l-1d-auC" firstAttribute="bottom" secondItem="jVK-aM-RRq" secondAttribute="bottomMargin" id="SUp-UM-KVW"/>
+                                                <constraint firstItem="G4l-1d-auC" firstAttribute="leading" secondItem="jVK-aM-RRq" secondAttribute="leadingMargin" id="XPh-eO-7an"/>
                                                 <constraint firstItem="bjt-cZ-Eaz" firstAttribute="bottom" secondItem="jVK-aM-RRq" secondAttribute="bottomMargin" id="mA4-Xv-brT"/>
-                                                <constraint firstItem="G4l-1d-auC" firstAttribute="bottom" secondItem="jVK-aM-RRq" secondAttribute="bottomMargin" id="q61-YM-0Mp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="classelabel" destination="G4l-1d-auC" id="dhg-hH-SSE"/>
+                                            <outlet property="argomentoLabel" destination="G4l-1d-auC" id="B1S-5C-E4M"/>
                                             <outlet property="dataLabel" destination="bjt-cZ-Eaz" id="WwK-ZE-HR0"/>
                                             <outlet property="materiaLabel" destination="yG2-F8-e9Q" id="tje-9w-ipS"/>
                                         </connections>

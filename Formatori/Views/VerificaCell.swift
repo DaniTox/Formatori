@@ -11,7 +11,7 @@ import UIKit
 class VerificaCell: UITableViewCell {
 
     @IBOutlet weak var materiaLabel: UILabel!
-    @IBOutlet weak var classelabel: UILabel!
+    @IBOutlet weak var argomentoLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
     
     
