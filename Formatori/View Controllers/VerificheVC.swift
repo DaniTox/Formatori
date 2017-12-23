@@ -18,6 +18,7 @@ class VerificheVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var loader : Loader?
     
+    var selectedIndexPath : IndexPath?
     var filterMode : ((Verifica) -> Bool)?
     
     override func viewDidLoad() {
@@ -66,7 +67,9 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
         let ver = correctVerifiche[indexPath.row]
         if editingStyle == .delete {
             loader?.removeVerifica(id: ver.idVerifica)
@@ -106,6 +109,10 @@ extension VerificheVC : LoaderDelegate {
             let alert = getAlert(title: "Successo", message: "La verifica è stata completata con successo!")
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
+                if let indexPath = self.selectedIndexPath {
+                    verifiche.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
                 self.tableView.reloadData()
             }
         }
