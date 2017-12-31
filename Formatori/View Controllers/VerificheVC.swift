@@ -18,6 +18,7 @@ class VerificheVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var loader : Loader?
     
+    var selectedVerifica : Verifica?
     var selectedIndexPath : IndexPath?
     var filterMode : ((Verifica) -> Bool)?
     
@@ -29,8 +30,22 @@ class VerificheVC: UIViewController {
         loader?.loadMyVerifiche()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        if loader != nil {
+//            loader?.loadMyVerifiche()
+//        }
+            tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func segmentTouched(_ sender: UISegmentedControl) {
@@ -48,6 +63,11 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
     
     var correctVerifiche : [Verifica] {
         return verifiche.filter(filterMode ?? { return $0.idVerifica != 0 }) //SE FILTERMODE IS NIL, RITORNALE TUTTE
+    }
+    
+    func getCorrectVer() -> [Verifica] {
+        
+        return []
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,10 +93,25 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
         let ver = correctVerifiche[indexPath.row]
         if editingStyle == .delete {
             loader?.removeVerifica(id: ver.idVerifica)
-
         }
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedVerifica = correctVerifiche[indexPath.row]
+        self.performSegue(withIdentifier: "showVerificaMenu", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        DispatchQueue.main.async {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            if let ver = self.selectedVerifica, let vc = segue.destination as? VerificaMenu {
+                vc.verificaSelezionata = ver
+            }
+        }
+    }
 }
 
 extension VerificheVC : LoaderDelegate {
@@ -110,8 +145,11 @@ extension VerificheVC : LoaderDelegate {
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
                 if let indexPath = self.selectedIndexPath {
-                    verifiche.remove(at: indexPath.row)
-                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    let ver = self.correctVerifiche[indexPath.row]
+                    if let id = ver.idVerifica {
+                        verifiche.removeVerificaWith(id: id)
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
                 }
                 self.tableView.reloadData()
             }

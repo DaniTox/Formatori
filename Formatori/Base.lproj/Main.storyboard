@@ -55,7 +55,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="pft-Z5-UHM" kind="show" identifier="showVerifiche" id="726-Jd-WOw"/>
+                                            <segue destination="e2y-gO-LSf" kind="show" identifier="showVerifiche" id="726-Jd-WOw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -375,7 +375,7 @@
                                                         <rect key="frame" x="0.0" y="133" width="428" height="33.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -447,14 +447,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ke-Bn-X3p">
-                                <rect key="frame" x="0.0" y="120" width="1024" height="648"/>
+                                <rect key="frame" x="0.0" y="164" width="1024" height="604"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="9Ds-VD-Oep" customClass="VerificaCell" customModule="Formatori" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1024" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ds-VD-Oep" id="jVK-aM-RRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="131.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG2-F8-e9Q">
@@ -514,7 +514,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-Pb-dpd">
-                                <rect key="frame" x="0.0" y="84" width="1024" height="29"/>
+                                <rect key="frame" x="0.0" y="128" width="1024" height="29"/>
                                 <segments>
                                     <segment title="1E"/>
                                     <segment title="2E"/>
@@ -530,7 +530,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verifiche che hai programmato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG0-NX-Z5u">
-                                <rect key="frame" x="299" y="20" width="426" height="58"/>
+                                <rect key="frame" x="299" y="64" width="426" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QG0-NX-Z5u" secondAttribute="height" multiplier="213:29" id="csg-Ja-GOV"/>
                                     <constraint firstAttribute="height" constant="58" id="nax-IF-Zgn"/>
@@ -540,7 +540,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuM-By-nWG">
-                                <rect key="frame" x="10" y="20" width="71" height="45"/>
+                                <rect key="frame" x="10" y="64" width="71" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1Nm-aD-Kl3"/>
                                 </constraints>
@@ -573,14 +573,85 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oLj-st-eRY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NkT-K6-gUW"/>
                     <connections>
                         <outlet property="segmentedControl" destination="CbI-Pb-dpd" id="jke-v5-B88"/>
                         <outlet property="tableView" destination="6Ke-Bn-X3p" id="lOK-hd-hqI"/>
+                        <segue destination="xun-Sx-yx7" kind="show" identifier="showVerificaMenu" id="E2g-5F-OVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkF-CB-ApX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102.5390625" y="826.5625"/>
+            <point key="canvasLocation" x="103" y="1612"/>
+        </scene>
+        <!--Verifica Menu-->
+        <scene sceneID="cPN-5Y-0ln">
+            <objects>
+                <viewController id="xun-Sx-yx7" customClass="VerificaMenu" customModule="Formatori" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oiD-Oz-0YU">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark" translatesAutoresizingMaskIntoConstraints="NO" id="MEJ-al-WKa">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="itZ-8U-q4r">
+                                <rect key="frame" x="337" y="309" width="350" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhk-hd-j65" customClass="RoundButton" customModule="Formatori" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <state key="normal" title="Imposta verifica come corretta">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="setDoneStateAction:" destination="xun-Sx-yx7" eventType="touchUpInside" id="O6F-ln-DQP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVi-II-bdU" customClass="RoundButton" customModule="Formatori" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="85" width="350" height="65"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <state key="normal" title="Elimina verifica">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="eliminaAction:" destination="xun-Sx-yx7" eventType="touchUpInside" id="XOT-3g-pDg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="11K-jZ-7Wh"/>
+                                    <constraint firstAttribute="width" constant="350" id="C4c-Gh-sCS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="itZ-8U-q4r" firstAttribute="centerX" secondItem="oiD-Oz-0YU" secondAttribute="centerX" id="6iU-Cm-g92"/>
+                            <constraint firstItem="MEJ-al-WKa" firstAttribute="top" secondItem="oiD-Oz-0YU" secondAttribute="top" id="8ep-et-Tdb"/>
+                            <constraint firstItem="ljy-3C-380" firstAttribute="bottom" secondItem="MEJ-al-WKa" secondAttribute="bottom" id="FLG-lY-bpe"/>
+                            <constraint firstItem="ljy-3C-380" firstAttribute="trailing" secondItem="MEJ-al-WKa" secondAttribute="trailing" id="XLG-TC-JnO"/>
+                            <constraint firstItem="itZ-8U-q4r" firstAttribute="centerY" secondItem="oiD-Oz-0YU" secondAttribute="centerY" id="fe0-a1-gbW"/>
+                            <constraint firstItem="MEJ-al-WKa" firstAttribute="leading" secondItem="ljy-3C-380" secondAttribute="leading" id="xoG-TX-LwN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ljy-3C-380"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3z1-Ar-uIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="2324"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yYe-4I-pcm">
@@ -599,6 +670,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rv6-md-SRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-861.328125" y="795.3125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ujW-tl-NvB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e2y-gO-LSf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wlw-jG-IIm">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pft-Z5-UHM" kind="relationship" relationship="rootViewController" id="j3k-1l-lvm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpS-4u-dMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.5390625" y="826.5625"/>
         </scene>
     </scenes>
     <resources>

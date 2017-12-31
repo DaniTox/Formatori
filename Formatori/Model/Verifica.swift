@@ -19,3 +19,12 @@ class Verifica : Encodable, Decodable {
     
 }
 
+extension Array where Element == Verifica {
+    mutating func removeVerificaWith(id: Int) {
+        for (index, ver) in self.enumerated() {
+            if ver.idVerifica! == id {
+                self.remove(at: index)
+            }
+        }
+    }
+}
