@@ -66,7 +66,13 @@ class CreateVerificaFinalVC: UIViewController {
     @IBAction func createVerifica(_ sender: UIButton) {
         if checkInput() != 0 { return }
         print("Creo verifica...")
-        loader?.createVerifica(materia: materia!, argomento: argomento!, classe: classe!, data: date)
+        let ver = Verifica()
+        ver.materia = materia!
+        ver.titolo = argomento!
+        ver.classe = classe!
+        ver.date = date
+        
+        loader?.create(verifica: ver)
     }
     
     private func checkInput() -> Int {
