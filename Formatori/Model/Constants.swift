@@ -42,6 +42,7 @@ extension Date {
     }
 }
 
+var classi : [String] = ["1E", "2E", "3E", "4E", "1M", "2M", "3M", "4M"]
 
 let materie : [String] = [
     "Italiano",

@@ -30,7 +30,7 @@ class CreateVerificaMateriaVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "continueCreating" {
-            if let vc = segue.destination as? CreateVerificaFinalVC {
+            if let vc = segue.destination as? CreateVerificaMediumVC {
                 vc.materiaSelezionata = materiaSelezionata
             }
         }

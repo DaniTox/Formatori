@@ -24,6 +24,7 @@
 		DB28F1911FF7DA7C00C5E1B9 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28F17F1FF7DA7C00C5E1B9 /* IQToolbar.swift */; };
 		DB28F1921FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28F1801FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift */; };
 		DB28F1931FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB28F1821FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle */; };
+		DB60FEF41FF9CD0E00376B3C /* CreateVerificaMediumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60FEF31FF9CD0E00376B3C /* CreateVerificaMediumVC.swift */; };
 		DBB856911FF86BF3007F5611 /* VerificaMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB856901FF86BF3007F5611 /* VerificaMenu.swift */; };
 		DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC621FE7022E0046D650 /* AppDelegate.swift */; };
 		DBC3DC651FE7022E0046D650 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3DC641FE7022E0046D650 /* LoginVC.swift */; };
@@ -66,6 +67,7 @@
 		DB28F17F1FF7DA7C00C5E1B9 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		DB28F1801FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		DB28F1821FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DB60FEF31FF9CD0E00376B3C /* CreateVerificaMediumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVerificaMediumVC.swift; sourceTree = "<group>"; };
 		DBB856901FF86BF3007F5611 /* VerificaMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificaMenu.swift; sourceTree = "<group>"; };
 		DBC3DC5F1FE7022E0046D650 /* Formatori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formatori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC3DC621FE7022E0046D650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				DBC3DC641FE7022E0046D650 /* LoginVC.swift */,
 				DBC3DC871FE925CF0046D650 /* HomeVC.swift */,
 				DBD401C01FE99FE500F0D599 /* CreateVerificaMateriaVC.swift */,
+				DB60FEF31FF9CD0E00376B3C /* CreateVerificaMediumVC.swift */,
 				DBD401C41FE9A71B00F0D599 /* CreateVerificaFinalVC.swift */,
 				DBD401CA1FEED2DC00F0D599 /* VerificheVC.swift */,
 				DBB856901FF86BF3007F5611 /* VerificaMenu.swift */,
@@ -344,6 +347,7 @@
 				DB28F1911FF7DA7C00C5E1B9 /* IQToolbar.swift in Sources */,
 				DBD401CB1FEED2DC00F0D599 /* VerificheVC.swift in Sources */,
 				DBD401C31FE9A2BE00F0D599 /* VerificheCollCell.swift in Sources */,
+				DB60FEF41FF9CD0E00376B3C /* CreateVerificaMediumVC.swift in Sources */,
 				DBD401C91FEED2A700F0D599 /* VerificaCell.swift in Sources */,
 				DBC3DC841FE833440046D650 /* Links.swift in Sources */,
 				DB28F18F1FF7DA7C00C5E1B9 /* IQPreviousNextView.swift in Sources */,

@@ -10,74 +10,54 @@ import UIKit
 
 class CreateVerificaFinalVC: UIViewController {
 
-    var materiaSelezionata : String? {
-        didSet {
-            print("FINALVC: materiaSelezionata settata su: \(materiaSelezionata ?? "Null")")
-        }
-    }
-    
-    private var classeSelezionata : String? {
-        didSet {
-            print("Classe selezionata: \(classeSelezionata ?? "null")")
-        }
-    }
+    var materiaSelezionata : String?
+    var classeSelezionata : String?
+    var argomentoScritto : String?
+    private var date : Date { return datePicker.date }
     
     @IBOutlet weak var materiaSelLabel: UILabel!
-    @IBOutlet var classiOutlets: [UIButton]!
-    @IBOutlet weak var argomentoTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    var materia : String? {
-        return materiaSelezionata
-    }
-    var classe : String? {
-        return classeSelezionata
-    }
-    var argomento : String? {
-        return argomentoTextField.text
-    }
-    var date : Date {
-        return datePicker.date
-    }
-    
+ 
     var loader : Loader?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        materiaSelLabel.text = "Materia selezionata: \(materiaSelezionata ?? "ERRORE")"
+        //materiaSelLabel.text = "Materia selezionata: \(materiaSelezionata ?? "ERRORE")"
         loader = Loader()
         loader?.delegate = self
+        
+        print("FINALVC: mat: \(materiaSelezionata ?? "Error")\tclass: \(classeSelezionata ?? "Error")\targ:\(argomentoScritto ?? "Error")")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
-    @IBAction func classeBtnTouched(_ sender: UIButton) {
-        classiOutlets.forEach({ $0.backgroundColor = UIColor.clear })
-        sender.backgroundColor = UIColor.orange
-        classeSelezionata = sender.currentTitle
-    }
-    
-    
+ 
     
     @IBAction func createVerifica(_ sender: UIButton) {
         if checkInput() != 0 { return }
+        
         print("Creo verifica...")
         let ver = Verifica()
-        ver.materia = materia!
-        ver.titolo = argomento!
-        ver.classe = classe!
+        ver.materia = materiaSelezionata!
+        ver.titolo = argomentoScritto!
+        ver.classe = classeSelezionata!
         ver.date = date
         
         loader?.create(verifica: ver)
     }
     
     private func checkInput() -> Int {
+        guard
+            let _ = materiaSelezionata,
+            let _ = argomentoScritto,
+            let _ = classeSelezionata
+        else { return 1 }
+        
         let calendar = Calendar.current
-        if materia == nil || classe == nil || (argomento == nil || (argomento?.isEmpty)! ) { return 1 }
+        if calendar.isDateInToday(date) { return 0 }
         if calendar.isDateInYesterday(date) || Date() > date { return 1 }
         return 0
     }

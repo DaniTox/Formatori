@@ -12,25 +12,6 @@ class Loader {
 
     weak var delegate : LoaderDelegate?
     
-//    func createVerifica(materia: String, argomento: String, classe: String, data: Date) {
-//        if materia.isEmpty || argomento.isEmpty || classe.isEmpty || formatore?.token == nil { return }
-//        guard let arg = argomento.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed) else { print("Errore converting path: createVerifica"); return }
-//        let link = "\(Links.createVerifica)?materia=\(materia)&titolo=\(arg)&classe=\(classe)&data=\(data.string)&token=\(formatore!.token!)"
-//        guard let url = URL(string: link) else { print("Error link: \(link)"); return }
-//        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-//            guard let data = data else { return }
-//            let json = try? JSONDecoder().decode(Response.self, from: data)
-//            if json?.code != String(200) {
-//                if let msg = json?.message {
-//                    self?.delegate?.didCreateVerificaWithReturnCode!(1, and: msg)
-//                }
-//            }
-//            else {
-//                self?.delegate?.didCreateVerificaWithReturnCode!(0, and: nil)
-//            }
-//        }.resume()
-//    }
-    
     func create(verifica: Verifica) {
         if verifica.checkIntegrityOfData() != 0 { return }
         
