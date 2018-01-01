@@ -13,6 +13,19 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameTextF: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var spinner : UIActivityIndicatorView!
+    var isLoading : Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                if self.isLoading {
+                    self.spinner.startAnimating()
+                } else {
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
+    }
+    
     var auther : Auth?
     
     override func viewDidLoad() {
@@ -28,6 +41,7 @@ class LoginVC: UIViewController {
 
     
     @IBAction func loginAction(_ sender: UIButton) {
+        isLoading = true
         auther?.login(with: usernameTextF.text!, password: passwordTextField.text!)
     }
     
@@ -36,6 +50,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC : responseDelegate {
     func loginDidFinish(with code: Int, and message: String?) {
+        isLoading = false
         if code == 0 {
             print("LOGGATO COME: \(formatore?.nome ?? "ERROR")")
             DispatchQueue.main.async {

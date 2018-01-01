@@ -12,6 +12,20 @@ class VerificaMenu: UIViewController {
 
     var verificaSelezionata : Verifica?
     var loader : Loader?
+    
+    @IBOutlet weak var spinner : UIActivityIndicatorView!
+    var isLoading : Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                if self.isLoading {
+                    self.spinner.startAnimating()
+                } else {
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loader = Loader()
@@ -28,6 +42,7 @@ class VerificaMenu: UIViewController {
         alert.addAction(UIAlertAction(title: "Annulla", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Imposta", style: .destructive, handler: { [weak self] (action) in
             if let ver = self?.verificaSelezionata, let id = ver.idVerifica {
+                self?.isLoading = true
                 self?.loader?.set_ver_to_done_state(idVerifica: id)
             }
         }))
@@ -39,6 +54,7 @@ class VerificaMenu: UIViewController {
         alert.addAction(UIAlertAction(title: "Annulla", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Elimina", style: .destructive, handler: { [weak self] (action) in
             if let verifica = self?.verificaSelezionata, let id = verifica.idVerifica {
+                self?.isLoading = true
                 self?.loader?.removeVerifica(id: id)
             }
         }))
@@ -51,6 +67,7 @@ class VerificaMenu: UIViewController {
 extension VerificaMenu : LoaderDelegate {
     
     func didRemoveVerificaWith(code: Int, andMsg message: String?) {
+        self.isLoading = false
         if code == 0 {
             DispatchQueue.main.async {
                 if let ver = self.verificaSelezionata, let id = ver.idVerifica {
@@ -67,6 +84,7 @@ extension VerificaMenu : LoaderDelegate {
     }
     
     func set_ver_state_doneDidFinish(code: Int, andMsg message: String?) {
+        self.isLoading = false
         if code == 0 {
             if let ver = self.verificaSelezionata, let id = ver.idVerifica {
                 verifiche.removeVerificaWith(id: id)

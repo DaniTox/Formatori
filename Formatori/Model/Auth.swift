@@ -38,6 +38,13 @@ class Auth {
         
     }
 
+    static func logout() -> Int {
+        if formatore != nil {
+            formatore!.logout()
+            return 0
+        }
+        return 1
+    }
     
 }
 

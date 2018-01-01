@@ -15,17 +15,31 @@ class CreateVerificaFinalVC: UIViewController {
     var argomentoScritto : String?
     private var date : Date { return datePicker.date }
     
-    @IBOutlet weak var materiaSelLabel: UILabel!
+    //@IBOutlet weak var materiaSelLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
  
     var loader : Loader?
     
+    @IBOutlet weak var spinner : UIActivityIndicatorView!
+    var isLoading : Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                if self.isLoading {
+                    self.spinner.startAnimating()
+                } else {
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //materiaSelLabel.text = "Materia selezionata: \(materiaSelezionata ?? "ERRORE")"
         loader = Loader()
         loader?.delegate = self
+        
+        datePicker.setValue(UIColor.white, forKey: "textColor")
         
         print("FINALVC: mat: \(materiaSelezionata ?? "Error")\tclass: \(classeSelezionata ?? "Error")\targ:\(argomentoScritto ?? "Error")")
     }
@@ -46,6 +60,7 @@ class CreateVerificaFinalVC: UIViewController {
         ver.classe = classeSelezionata!
         ver.date = date
         
+        isLoading = true
         loader?.create(verifica: ver)
     }
     
@@ -77,6 +92,7 @@ class CreateVerificaFinalVC: UIViewController {
 
 extension CreateVerificaFinalVC : LoaderDelegate {
     func didCreateVerificaWithReturnCode(_ code: Int, and message: String?) {
+        self.isLoading = false
         if code == 1 {
             let alert = getAlert(title: "Errore", message: message ?? "NO RETURN VALUE ERRORE")
             DispatchQueue.main.async {

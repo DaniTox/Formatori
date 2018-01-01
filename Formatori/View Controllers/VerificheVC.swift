@@ -16,27 +16,52 @@ class VerificheVC: UIViewController {
         }
     }
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner : UIActivityIndicatorView!
+    
     var loader : Loader?
+    
+    var isLoading : Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                if self.isLoading {
+                    self.refreshCtrl?.beginRefreshing()
+                    self.spinner.startAnimating()
+                } else {
+                    self.refreshCtrl?.endRefreshing()
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
+    }
     
     var selectedVerifica : Verifica?
     var selectedIndexPath : IndexPath?
     var filterMode : ((Verifica) -> Bool)?
     
+    var refreshCtrl : UIRefreshControl?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        
         loader = Loader()
         loader?.delegate = self
-        loader?.loadMyVerifiche()
+        loadVerifiche()
+        
+        refreshCtrl = UIRefreshControl()
+        refreshCtrl?.addTarget(self, action: #selector(loadVerifiche), for: .valueChanged)
+        tableView.refreshControl = refreshCtrl
+        
+        
     }
 
+    @objc private func loadVerifiche() {
+        isLoading = true
+        loader?.loadMyVerifiche()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        if loader != nil {
-//            loader?.loadMyVerifiche()
-//        }
-            tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +80,10 @@ class VerificheVC: UIViewController {
     
     @IBAction func backAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addVerifica(_ sender: UIButton) {
+        performSegue(withIdentifier: "createVerFromVerVC", sender: self)
     }
     
 }
@@ -92,7 +121,16 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
         selectedIndexPath = indexPath
         let ver = correctVerifiche[indexPath.row]
         if editingStyle == .delete {
-            loader?.removeVerifica(id: ver.idVerifica)
+            let alert = UIAlertController(title: "Attenzione", message: "Vuoi veramente eliminare questa verifica? Questa operazione non è annullabile.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Annulla", style: .default))
+            alert.addAction(UIAlertAction(title: "Elimina", style: .destructive, handler: { (action) in
+                self.isLoading = true
+                self.loader?.removeVerifica(id: ver.idVerifica)
+            }))
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            
         }
     }
     
@@ -117,6 +155,7 @@ extension VerificheVC : UITableViewDataSource, UITableViewDelegate {
 extension VerificheVC : LoaderDelegate {
     
     func didFinishLoadVerificheWith(_ code: Int, and message: String?) {
+        self.isLoading = false
         if code == 1 {
             if let msg = message {
                 let alert = getAlert(title: "Errore", message: msg)
@@ -140,6 +179,7 @@ extension VerificheVC : LoaderDelegate {
     }
     
     func didRemoveVerificaWith(code: Int, andMsg message: String?) {
+        self.isLoading = false
         if code == 0 {
             let alert = getAlert(title: "Successo", message: "La verifica è stata completata con successo!")
             DispatchQueue.main.async {

@@ -14,22 +14,29 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(formatore?.nome ?? "No formatore")
-        if formatore == nil {
-            print("is main thread? \(Thread.isMainThread)")
-            
-            
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "showLogin", sender: self)
-            }
-        }
-        
-        print("Still here")
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if formatore == nil {
+            performSegue(withIdentifier: "showLogin", sender: self)
+        }
+    }
+    
+    
+    @IBAction func logout() {
+        if Auth.logout() == 0 {
+            performSegue(withIdentifier: "showLogin", sender: self)
+        }
+        else {
+            let al = getAlert(title: "Errore", message: "Non sono riuscito a fare il logout. Contatta il mio creatore Bazzani per chiarimenti")
+            present(al, animated: true)
+        }
+    }
+    
 }
