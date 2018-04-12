@@ -10,8 +10,8 @@ import Foundation
 
 class Response : Decodable {
     
-    var code : String!
-    var message : String!
+    var code : Int = 1
+    var message : String?
     var formatore : Formatore?
     var verifiche : [Verifica]?
     

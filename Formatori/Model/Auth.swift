@@ -10,44 +10,53 @@ import Foundation
 
 class Auth {
     
-    weak var delegate : responseDelegate!
-    
-    func login(with nome: String, password: String) {
+    func login(with nome: String, password: String, completion : ((Bool, String?) -> Void)?) {
         let link = "\(Links.login)?nome=\(nome)&password=\(password)"
         guard let url = URL(string: link) else { return }
         
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        print(link)
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             
-            if let json = try? JSONDecoder().decode(Response.self, from: data) {
+            print("DATA: \n\(data)\n\nFINE DATA")
+            
+            do {
+                let json = try JSONDecoder().decode(Response.self, from: data)
                 
-                if json.code != "200", let msg = json.message {
-                    self?.delegate.loginDidFinish!(with: 1, and: msg)
-                }
-                else {
+                switch json.code {
+                case 0:
                     if let formatore = json.formatore {
-                        formatore.login()
-                        self?.delegate.loginDidFinish!(with: 0, and: nil)
+                        self.saveFormatoreInMemory(formatore)
                     }
-                    else {
-                        self?.delegate.loginDidFinish!(with: 1, and: "Can't get formatore form json")
-                    }
+                    completion?(true, nil)
+                default:
+                    completion?(false, json.message)
                 }
+                
+            } catch {
+                completion?(false, error.localizedDescription)
             }
         }.resume()
         
     }
 
-    static func logout() -> Int {
-        if formatore != nil {
-            formatore!.logout()
-            return 0
-        }
-        return 1
+    static func logout() {
+        removeFormatoreFromMemory()
     }
+    
+    static private func removeFormatoreFromMemory() {
+        KeychainWrapper.standard.set(Data(), forKey: "formatore")
+    }
+    
+    private func saveFormatoreInMemory(_ formatore : Formatore) {
+        guard let data = try? JSONEncoder().encode(formatore) else { return }
+        
+        KeychainWrapper.standard.set(data, forKey: "formatore")
+        
+    }
+    
+    
     
 }
 
-@objc protocol responseDelegate {
-    @objc optional func loginDidFinish(with code: Int, and message : String?)
-}

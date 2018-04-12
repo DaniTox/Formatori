@@ -8,22 +8,16 @@
 
 import Foundation
 
-class Formatore : Decodable, Encodable {
+class Formatore : Encodable, Decodable {
     
-    var idFormatore : Int!
-    var nome : String!
-    var token : String!
+    var idFormatore : Int
+    var nome : String
+    var token : String
     
-    func login() {
-        if let data = try? JSONEncoder().encode(self) {
-            UserDefaults.standard.set(data, forKey: "formatore")
-        }
-        else {
-            print("ERROR ENCODING DATA FORMATORE TO USER DEFAULTS")
-        }
+    init(id: Int, nome: String, token: String) {
+        self.idFormatore = id
+        self.nome = nome
+        self.token = token
     }
     
-    func logout() {
-        UserDefaults.standard.set(nil, forKey: "formatore")
-    }
 }

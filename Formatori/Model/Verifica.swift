@@ -8,37 +8,26 @@
 
 import Foundation
 
-class Verifica : Encodable, Decodable {
+class Verifica : Codable {
     
     var idVerifica : Int!
     var materia : String!
     var titolo : String!
     var data : String!
     var classe : String!
-    var date : Date!
+    var date : Date?
     
     var argomento : String? {
         return titolo.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
     }
     
     
-    
-    func checkIntegrityOfData() -> Int {
-        
-        if self.materia == nil || self.materia.isEmpty { return 1 }
-        if self.date == nil  { return 1 }
-        if self.classe == nil || self.classe.isEmpty { return 1 }
-        if self.argomento == nil || self.argomento!.isEmpty { return 1 }
-        
-        return 0
-    }
-    
 }
 
 extension Array where Element == Verifica {
     mutating func removeVerificaWith(id: Int) {
         for (index, ver) in self.enumerated() {
-            if ver.idVerifica! == id {
+            if ver.idVerifica == id {
                 self.remove(at: index)
             }
         }
