@@ -13,7 +13,7 @@ class Loader {
     
     func create(verifica: Verifica, completion: ((Bool, String?) -> Void)?) {
         
-        let link = "\(Links.createVerifica)?materia=\(verifica.materia)&titolo=\(verifica.argomento)&classe=\(verifica.classe)&data=\(verifica.date?.string)&token=\(formatore?.token)"
+        let link = "\(Links.createVerifica)?materia=\(verifica.materia)&titolo=\(verifica.titolo)&classe=\(verifica.classe)&data=\(verifica.date?.string)&token=\(formatore?.token)"
         guard let url = URL(string: link) else { print("Error link: \(link)"); return }
         
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in

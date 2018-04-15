@@ -10,15 +10,22 @@ import Foundation
 
 class Verifica : Codable {
     
-    var idVerifica : Int!
-    var materia : String!
-    var titolo : String!
-    var data : String!
-    var classe : String!
+    var idVerifica : Int?
+    var materia : String?
+    var titolo : String?
+    var data : String?
+    var classe : String?
     var date : Date?
+    var note : String?
     
-    var argomento : String? {
-        return titolo.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
+    
+    var isEncoded : Bool = false
+    func encodeForServer() {
+        note = note?.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
+        materia = materia?.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
+        titolo = titolo?.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
+        
+        self.isEncoded = true
     }
     
     

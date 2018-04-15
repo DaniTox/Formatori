@@ -40,16 +40,16 @@ class UIBouncyButton: UIButton {
                        initialSpringVelocity: 2.0,
                        options: UIViewAnimationOptions.allowUserInteraction,
                        animations: { () -> Void in
-                        self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                        self.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         }, completion: nil)
     }
     
     
     func onTouchUp() {
-        UIView.animate(withDuration: 1.0,
+        UIView.animate(withDuration: 0.25,
                        delay: 0.0,
-                       usingSpringWithDamping: 0.2,
-                       initialSpringVelocity: 3.0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 0,
                        options: UIViewAnimationOptions.allowUserInteraction,
                        animations: { () -> Void in
                         self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

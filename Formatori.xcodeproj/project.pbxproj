@@ -42,6 +42,9 @@
 		DBD401C71FE9BB5800F0D599 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401C61FE9BB5800F0D599 /* Loader.swift */; };
 		DBD401C91FEED2A700F0D599 /* VerificaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401C81FEED2A700F0D599 /* VerificaCell.swift */; };
 		DBD401CD1FEEE38800F0D599 /* Verifica.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD401CC1FEEE38800F0D599 /* Verifica.swift */; };
+		DBE698A320836981003F15A4 /* CRClasseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE698A220836981003F15A4 /* CRClasseVC.swift */; };
+		DBE698A5208377A3003F15A4 /* CRMateriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE698A4208377A3003F15A4 /* CRMateriaVC.swift */; };
+		DBE698A820838A9E003F15A4 /* CRArgomentoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE698A720838A9E003F15A4 /* CRArgomentoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		DBD401C61FE9BB5800F0D599 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		DBD401C81FEED2A700F0D599 /* VerificaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificaCell.swift; sourceTree = "<group>"; };
 		DBD401CC1FEEE38800F0D599 /* Verifica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifica.swift; sourceTree = "<group>"; };
+		DBE698A220836981003F15A4 /* CRClasseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRClasseVC.swift; sourceTree = "<group>"; };
+		DBE698A4208377A3003F15A4 /* CRMateriaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMateriaVC.swift; sourceTree = "<group>"; };
+		DBE698A720838A9E003F15A4 /* CRArgomentoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRArgomentoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,8 +246,19 @@
 			children = (
 				DBA915B1207FF0960099CBD1 /* HomeVC.swift */,
 				DBA915B3207FF4CF0099CBD1 /* LoginVC.swift */,
+				DBE698A6208377B1003F15A4 /* VerificaCreationVCs */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DBE698A6208377B1003F15A4 /* VerificaCreationVCs */ = {
+			isa = PBXGroup;
+			children = (
+				DBE698A220836981003F15A4 /* CRClasseVC.swift */,
+				DBE698A4208377A3003F15A4 /* CRMateriaVC.swift */,
+				DBE698A720838A9E003F15A4 /* CRArgomentoVC.swift */,
+			);
+			path = VerificaCreationVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +352,9 @@
 				DB28F1901FF7DA7C00C5E1B9 /* IQTitleBarButtonItem.swift in Sources */,
 				DBA915B4207FF4CF0099CBD1 /* LoginVC.swift in Sources */,
 				DBA915B6208003550099CBD1 /* UIBouncyButton.swift in Sources */,
+				DBE698A820838A9E003F15A4 /* CRArgomentoVC.swift in Sources */,
 				DB28F18C1FF7DA7C00C5E1B9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DBE698A320836981003F15A4 /* CRClasseVC.swift in Sources */,
 				DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */,
 				DB28F1871FF7DA7C00C5E1B9 /* IQUIViewController+Additions.swift in Sources */,
 				DB28F1911FF7DA7C00C5E1B9 /* IQToolbar.swift in Sources */,
@@ -346,6 +365,7 @@
 				DB28F1841FF7DA7C00C5E1B9 /* IQUIScrollView+Additions.swift in Sources */,
 				DB28F1921FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				DBA915BB208008B70099CBD1 /* KeychainWrapper.swift in Sources */,
+				DBE698A5208377A3003F15A4 /* CRMateriaVC.swift in Sources */,
 				DBD401C71FE9BB5800F0D599 /* Loader.swift in Sources */,
 				DBC3DC861FE8380E0046D650 /* Constants.swift in Sources */,
 			);
