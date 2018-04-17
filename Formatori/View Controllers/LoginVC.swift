@@ -14,6 +14,8 @@ class LoginVC: UIViewController {
     var passwordTextField : UITextField!
     var loginButton : UIBouncyButton!
     
+    var completion : (() -> Void)?
+    
     var loadingIndicator : UIActivityIndicatorView!
 
     var isLoading : Bool = false {
@@ -49,7 +51,9 @@ class LoginVC: UIViewController {
                     self?.isLoading = false
                     if logged {
                         DispatchQueue.main.async { [weak self] in
-                            self?.dismiss(animated: true, completion: nil)
+                            self?.dismiss(animated: true, completion: {
+                                self?.completion?()
+                            })
                         }
                     }
                     if let msg = message, let alert = self?.getAlert(title: "Errore", message: msg) {

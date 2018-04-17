@@ -61,7 +61,11 @@ class HomeVC: UIViewController {
     
     @objc private func openLoginVC() {
         let vc = LoginVC()
-        
+        vc.completion = {
+            DispatchQueue.main.async { [weak self] in
+                self?.showViews()
+            }
+        }
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .formSheet
         
