@@ -28,7 +28,7 @@ class CRMateriaVC: UIViewController {
 
     @objc private func continueCreation() {
         if let verifica = verificaInCreazione, let materia = materiaSelezionata {
-            verifica.materia = materia
+            verifica.materia = materia.encodedString
             
             let vc = CRArgomentoVC()
             vc.verificaInCreazione = verifica
@@ -103,13 +103,13 @@ extension CRMateriaVC {
         continueButton.layer.cornerRadius = 10
         continueButton.backgroundColor = UIColor.gray.darker(by: 30)
         continueButton.translatesAutoresizingMaskIntoConstraints = false
-        continueButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        continueButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 23)
         continueButton.addTarget(self, action: #selector(continueCreation), for: .touchUpInside)
         view.addSubview(continueButton)
         
         [ continueButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
           continueButton.heightAnchor.constraint(equalToConstant: 60),
-          continueButton.widthAnchor.constraint(equalToConstant: 120),
+          continueButton.widthAnchor.constraint(equalToConstant: 170),
           continueButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10)
             ].forEach({$0.isActive = true})
         

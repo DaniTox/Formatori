@@ -12,11 +12,22 @@ class Loader {
 
     
     func create(verifica: Verifica, completion: ((Bool, String?) -> Void)?) {
+        guard   let materia = verifica.materia,
+                let titolo = verifica.titolo,
+                let classe = verifica.classe,
+                let dateString = verifica.date?.string,
+                let token = formatore?.token
+        else {
+            completion?(false, "Trovato qualche valore della verifica = nil")
+            return
+        }
         
-        let link = "\(Links.createVerifica)?materia=\(verifica.materia)&titolo=\(verifica.titolo)&classe=\(verifica.classe)&data=\(verifica.date?.string)&token=\(formatore?.token)"
-        guard let url = URL(string: link) else { print("Error link: \(link)"); return }
+        let note = verifica.note
         
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        let link = "\(Links.createVerifica)?materia=\(materia)&titolo=\(titolo)&classe=\(classe)&data=\(dateString)&token=\(token)&note=\(note ?? "")"
+        guard let url = URL(string: link) else { print("Error link: \(link)"); completion?(false, "Errore link: \(link)"); return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             
             do {
@@ -25,7 +36,7 @@ class Loader {
                     completion?(true, nil)
                 }
                 else {
-                    completion?(false, "Errore")
+                    completion?(false, json.message)
                 }
             } catch {
                 completion?(false, error.localizedDescription)
@@ -40,19 +51,42 @@ class Loader {
     }
     
     
-    func loadMyVerifiche() {
-        guard let token = formatore?.token else { return }
-        let link = "\(Links.loadVerifiche)?token=\(token)"
+    func loadMyVerifiche(completion: ((Bool, String?, [Verifica]?) -> Void )? = nil) {
+        guard let token = formatore?.token else {
+            completion?(false, "Formatore non loggato. Prova a riavviare l'app", nil)
+            return
+        }
         
-        guard let url = URL(string: link) else { print("Error Link: \(link)"); return }
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        let link = "\(Links.loadVerifiche)?token=\(token)"
+        guard let url = URL(string: link) else {
+            completion?(false, "ERRORE NELL'URL: \(link)", nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             
-            let json = try? JSONDecoder().decode(Response.self, from: data)
+            do {
+                let json = try JSONDecoder().decode(Response.self, from: data)
+                if json.code == 0 {
+                    let verifiche = json.verifiche
+                    completion?(true, nil, verifiche)
+                } else {
+                    completion?(false, json.message, nil)
+                }
+            }
+            catch {
+                print("Errore: \(error)")
+                completion?(false, error.localizedDescription, nil)
+            }
+            
+            
             
             
             
         }.resume()
+        
+        
     }
     
     

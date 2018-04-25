@@ -97,3 +97,9 @@ let materie : [String] = [
     "Disegno Meccanico",
     "Tecnologia Motoristica"
 ]
+
+extension String {
+    var encodedString : String {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+    }
+}

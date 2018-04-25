@@ -24,6 +24,9 @@
 		DB28F1911FF7DA7C00C5E1B9 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28F17F1FF7DA7C00C5E1B9 /* IQToolbar.swift */; };
 		DB28F1921FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28F1801FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift */; };
 		DB28F1931FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB28F1821FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle */; };
+		DB343D1D208FA0F800B57D4E /* ModificaVerificheVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB343D1C208FA0F800B57D4E /* ModificaVerificheVC.swift */; };
+		DB44235C209097EB0008C490 /* ModificaVerificaPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44235B209097EB0008C490 /* ModificaVerificaPopUpVC.swift */; };
+		DB8F9848208D05D100DA7550 /* CRDataVerificaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8F9847208D05D100DA7550 /* CRDataVerificaVC.swift */; };
 		DBA915B2207FF0960099CBD1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA915B1207FF0960099CBD1 /* HomeVC.swift */; };
 		DBA915B4207FF4CF0099CBD1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA915B3207FF4CF0099CBD1 /* LoginVC.swift */; };
 		DBA915B6208003550099CBD1 /* UIBouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA915B5208003550099CBD1 /* UIBouncyButton.swift */; };
@@ -66,6 +69,9 @@
 		DB28F17F1FF7DA7C00C5E1B9 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		DB28F1801FF7DA7C00C5E1B9 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		DB28F1821FF7DA7C00C5E1B9 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DB343D1C208FA0F800B57D4E /* ModificaVerificheVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificaVerificheVC.swift; sourceTree = "<group>"; };
+		DB44235B209097EB0008C490 /* ModificaVerificaPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificaVerificaPopUpVC.swift; sourceTree = "<group>"; };
+		DB8F9847208D05D100DA7550 /* CRDataVerificaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRDataVerificaVC.swift; sourceTree = "<group>"; };
 		DBA915B1207FF0960099CBD1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DBA915B3207FF4CF0099CBD1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DBA915B5208003550099CBD1 /* UIBouncyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBouncyButton.swift; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 				DBA915B1207FF0960099CBD1 /* HomeVC.swift */,
 				DBA915B3207FF4CF0099CBD1 /* LoginVC.swift */,
 				DBE698A6208377B1003F15A4 /* VerificaCreationVCs */,
+				DB343D1C208FA0F800B57D4E /* ModificaVerificheVC.swift */,
+				DB44235B209097EB0008C490 /* ModificaVerificaPopUpVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				DBE698A220836981003F15A4 /* CRClasseVC.swift */,
 				DBE698A4208377A3003F15A4 /* CRMateriaVC.swift */,
 				DBE698A720838A9E003F15A4 /* CRArgomentoVC.swift */,
+				DB8F9847208D05D100DA7550 /* CRDataVerificaVC.swift */,
 			);
 			path = VerificaCreationVCs;
 			sourceTree = "<group>";
@@ -353,9 +362,12 @@
 				DBA915B4207FF4CF0099CBD1 /* LoginVC.swift in Sources */,
 				DBA915B6208003550099CBD1 /* UIBouncyButton.swift in Sources */,
 				DBE698A820838A9E003F15A4 /* CRArgomentoVC.swift in Sources */,
+				DB44235C209097EB0008C490 /* ModificaVerificaPopUpVC.swift in Sources */,
 				DB28F18C1FF7DA7C00C5E1B9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DBE698A320836981003F15A4 /* CRClasseVC.swift in Sources */,
+				DB8F9848208D05D100DA7550 /* CRDataVerificaVC.swift in Sources */,
 				DBC3DC631FE7022E0046D650 /* AppDelegate.swift in Sources */,
+				DB343D1D208FA0F800B57D4E /* ModificaVerificheVC.swift in Sources */,
 				DB28F1871FF7DA7C00C5E1B9 /* IQUIViewController+Additions.swift in Sources */,
 				DB28F1911FF7DA7C00C5E1B9 /* IQToolbar.swift in Sources */,
 				DBD401C31FE9A2BE00F0D599 /* VerificheCollCell.swift in Sources */,
@@ -499,7 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5WYV8U42F;
 				INFOPLIST_FILE = Formatori/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Formatori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,7 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5WYV8U42F;
 				INFOPLIST_FILE = Formatori/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Formatori;
 				PRODUCT_NAME = "$(TARGET_NAME)";

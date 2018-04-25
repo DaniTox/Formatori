@@ -19,7 +19,7 @@ class Verifica : Codable {
     var note : String?
     
     
-    var isEncoded : Bool = false
+    var isEncoded : Bool? = false
     func encodeForServer() {
         note = note?.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)
         materia = materia?.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)

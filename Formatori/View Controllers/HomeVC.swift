@@ -18,6 +18,8 @@ class HomeVC: UIViewController {
 
     var formatoreLoggedLabel : UILabel!
     
+    var gradient : CAGradientLayer!
+    
     private var isLoggedin : Bool {
         return formatore != nil ? true : false
     }
@@ -54,6 +56,11 @@ class HomeVC: UIViewController {
         showViews()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradient.frame = view.frame
+    }
+    
     @objc private func logout() {
         Auth.logout()
         showViews()
@@ -82,12 +89,21 @@ class HomeVC: UIViewController {
         present(nav, animated: true, completion: nil)
     }
 
+    
+    @objc private func openModificaVerificheVC() {
+        let vc = ModificaVerificheVC()
+        
+        let nav = UINavigationController(rootViewController: vc)
+        vc.navigationItem.title = "Modifica Verifiche"
+        present(nav, animated: true, completion: nil)
+    }
+    
 }
 
 
 extension HomeVC {
     fileprivate func setViews() {
-        let gradient = CAGradientLayer()
+        gradient = CAGradientLayer()
         gradient.colors = [UIColor.black.cgColor, UIColor.darkGray.darker(by: 15)!.cgColor]
         gradient.frame = view.frame
         view.layer.addSublayer(gradient)
@@ -121,18 +137,6 @@ extension HomeVC {
           logoutButton.heightAnchor.constraint(equalToConstant: 50) ].forEach({ $0.isActive = true })
         
         
-        formatoreLoggedLabel = UILabel()
-        formatoreLoggedLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        formatoreLoggedLabel.textAlignment = .center
-        formatoreLoggedLabel.textColor = .white
-        formatoreLoggedLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(formatoreLoggedLabel)
-        [ formatoreLoggedLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-          formatoreLoggedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-          formatoreLoggedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-          formatoreLoggedLabel.heightAnchor.constraint(equalToConstant: 60)].forEach({ $0.isActive = true })
-        
-        
         
         createVerificaButton = UIBouncyButton()
         createVerificaButton.setTitle("Crea Verifica", for: .normal)
@@ -145,7 +149,7 @@ extension HomeVC {
         modificaVerButton.setTitle("Modifica verifiche", for: .normal)
         modificaVerButton.layer.cornerRadius = 10
         modificaVerButton.backgroundColor = UIColor.gray.darker(by: 30)
-        
+        modificaVerButton.addTarget(self, action: #selector(openModificaVerificheVC), for: .touchUpInside)
         
         verificheActionsStack = UIStackView(arrangedSubviews: [createVerificaButton, modificaVerButton])
         verificheActionsStack.alignment = .fill
@@ -160,6 +164,21 @@ extension HomeVC {
           verificheActionsStack.heightAnchor.constraint(equalToConstant: 120)].forEach({$0.isActive = true})
         
         
+        
+        
+        formatoreLoggedLabel = UILabel()
+        formatoreLoggedLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        formatoreLoggedLabel.textAlignment = .center
+        formatoreLoggedLabel.textColor = .white
+        formatoreLoggedLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(formatoreLoggedLabel)
+        let fltopAnchor = formatoreLoggedLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
+        fltopAnchor.priority = .defaultLow
+        fltopAnchor.isActive = true
+        formatoreLoggedLabel.bottomAnchor.constraint(lessThanOrEqualTo: verificheActionsStack.topAnchor, constant: -10).isActive = true
+        formatoreLoggedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        formatoreLoggedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        formatoreLoggedLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
        
         
