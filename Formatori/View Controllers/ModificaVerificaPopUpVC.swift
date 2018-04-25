@@ -16,6 +16,29 @@ class ModificaVerificaPopUpVC: UIViewController {
     var eliminaVerificaButton = UIButton()
     var modificaVerifcicaButton = UIButton()
     
+    var verificaSelected : Verifica?
+    
+    var indicatorView : UIActivityIndicatorView = {
+        let a = UIActivityIndicatorView()
+        a.hidesWhenStopped = true
+        a.translatesAutoresizingMaskIntoConstraints = false
+        return a
+    }()
+    
+    var isLoading : Bool = false {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                if self?.isLoading ?? false {
+                    self?.indicatorView.startAnimating()
+                } else {
+                    self?.indicatorView.stopAnimating()
+                }
+            }
+        }
+    }
+    
+    var dismissHandler : (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
@@ -29,6 +52,30 @@ class ModificaVerificaPopUpVC: UIViewController {
     @objc private func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc private func setVerificaAsDone() {
+        if let verifica = verificaSelected {
+            let model = Loader()
+            isLoading = true
+            model.setVerificaAsCorrect(verifica, completion: { [weak self] (success, errorString) in
+                self?.isLoading = false
+                if success {
+                    
+                    DispatchQueue.main.async {
+                        self?.dismiss(animated: true, completion: {
+                            self?.dismissHandler?()
+                        })
+                    }
+                } else {
+                    let alert = self?.getAlert(title: "Errore", message: errorString ?? "Errore generico")
+                    DispatchQueue.main.async {
+                        self?.present(alert!, animated: true, completion: nil)
+                    }
+                }
+            })
+        }
+    }
+    
     
 }
 
@@ -50,6 +97,7 @@ extension ModificaVerificaPopUpVC {
         setCorrettaButton.titleLabel?.adjustsFontSizeToFitWidth = true
         setCorrettaButton.titleLabel?.minimumScaleFactor = 0.6
         setCorrettaButton.translatesAutoresizingMaskIntoConstraints = false
+        setCorrettaButton.addTarget(self, action: #selector(setVerificaAsDone), for: .touchUpInside)
         view.addSubview(setCorrettaButton)
         
         eliminaVerificaButton.backgroundColor = .red
@@ -79,6 +127,10 @@ extension ModificaVerificaPopUpVC {
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 240).isActive = true
+        
+        view.addSubview(indicatorView)
+        indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        indicatorView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
         
     }
 }

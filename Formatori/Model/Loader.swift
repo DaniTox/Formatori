@@ -103,19 +103,45 @@ class Loader {
         }.resume()
     }
     
-    func set_ver_to_done_state(idVerifica: Int) {
-        guard let token = formatore?.token else { return }
-        if idVerifica < 0 { return }
-        let link = "\(Links.setVerificaCorretta)?token=\(token)&idVerifica=\(idVerifica)"
-        guard let url = URL(string: link) else { print("Error link: \(link)"); return }
+    func setVerificaAsCorrect(_ verifica: Verifica, completion: ((Bool, String?) -> Void)? = nil) {
+        guard let token = formatore?.token else {
+            completion?(false, "Token == nil. Prova a fare il logout e a rientrare")
+            return
+        }
+        guard let idVerifica = verifica.idVerifica else {
+            completion?(false, "idVerifica ==  nil. Prova a fare il logout e a rientrare")
+            return
+        }
         
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-            guard let data = data else { return }
+        let link = "\(Links.setVerificaCorretta)?token=\(token)&idVerifica=\(idVerifica)"
+        guard let url = URL(string: link) else {
+            completion?(false, "Link errato: \(link)")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion?(false, "Nessun byte ricevuto dal server. Riprova più tardi")
+                return
+            }
             
-            let json = try? JSONDecoder().decode(Response.self, from: data)
+            do {
+                let json = try JSONDecoder().decode(Response.self, from: data)
+                
+                if json.code == 0 {
+                    completion?(true, nil)
+                } else {
+                    completion?(false, json.message)
+                }
+                
+            } catch {
+                completion?(false, error.localizedDescription)
+            }
             
             
-            }.resume()
+        }.resume()
+        
+        
     }
     
 }
