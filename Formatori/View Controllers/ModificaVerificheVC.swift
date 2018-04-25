@@ -102,9 +102,17 @@ extension ModificaVerificheVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ModificaVerificaPopUpVC()
         vc.verificaSelected = verificheTable[indexPath.row]
-        vc.dismissHandler = { [weak self] in
-            self?.verifiche.removeVerificaWith(id: self!.verificheTable[indexPath.row].idVerifica!)
-            self?.reloadVerifiche()
+        vc.dismissHandler = { [weak self] (code) in
+            switch code {
+            case 0, 1:
+                self?.verifiche.removeVerificaWith(id: self!.verificheTable[indexPath.row].idVerifica!)
+                self?.reloadVerifiche()
+            case 2:
+                break //PER ADESSO NON SI FA NIENTE
+            default:
+                break
+            }
+            
         }
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .formSheet

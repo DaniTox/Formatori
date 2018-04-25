@@ -37,7 +37,7 @@ class ModificaVerificaPopUpVC: UIViewController {
         }
     }
     
-    var dismissHandler : (() -> Void)?
+    var dismissHandler : ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class ModificaVerificaPopUpVC: UIViewController {
                     
                     DispatchQueue.main.async {
                         self?.dismiss(animated: true, completion: {
-                            self?.dismissHandler?()
+                            self?.dismissHandler?(0) //SEND 0 COSì TOGLIE LA VERIFICA PERCHè è STATA CORRETTA
                         })
                     }
                 } else {
@@ -76,6 +76,39 @@ class ModificaVerificaPopUpVC: UIViewController {
         }
     }
     
+    @objc private func askAndRemoveVerifica() {
+        let alert = UIAlertController(title: "Attenzione", message: "Vuoi veramente eliminare questa verifica. Quest'azione non si può annullare", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Annulla", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Elimina", style: .destructive, handler: { [weak self] (action) in
+            self?.removeVerifica()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    private func removeVerifica() {
+        if let verifica = verificaSelected {
+            let model = Loader()
+            isLoading = true
+            model.removeVerifica(verifica, completion: { [weak self] (success, errorString) in
+                self?.isLoading = false
+                if success {
+                    
+                    DispatchQueue.main.async {
+                        self?.dismiss(animated: true, completion: {
+                            self?.dismissHandler?(1) //SEND 1 COSì TOGLIE LA VERIFICA PERCHè è STATA CORRETTA
+                        })
+                    }
+                } else {
+                    let alert = self?.getAlert(title: "Errore", message: errorString ?? "Errore generico")
+                    DispatchQueue.main.async {
+                        self?.present(alert!, animated: true, completion: nil)
+                    }
+                }
+            })
+        }
+
+    }
     
 }
 
@@ -105,6 +138,7 @@ extension ModificaVerificaPopUpVC {
         eliminaVerificaButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         eliminaVerificaButton.setTitle("Elimina", for: .normal)
         eliminaVerificaButton.translatesAutoresizingMaskIntoConstraints = false
+        eliminaVerificaButton.addTarget(self, action: #selector(askAndRemoveVerifica), for: .touchUpInside)
         view.addSubview(eliminaVerificaButton)
         
         modificaVerifcicaButton.backgroundColor = .gray
