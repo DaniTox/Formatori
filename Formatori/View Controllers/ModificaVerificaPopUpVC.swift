@@ -110,6 +110,12 @@ class ModificaVerificaPopUpVC: UIViewController {
 
     }
     
+    
+    @objc private func wip() {
+        let alert = getAlert(title: "Da continuare...", message: "Work In Progress. Riprova nella prossima versione")
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ModificaVerificaPopUpVC {
@@ -146,6 +152,7 @@ extension ModificaVerificaPopUpVC {
         modificaVerifcicaButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         modificaVerifcicaButton.setTitle("Modifica", for: .normal)
         modificaVerifcicaButton.translatesAutoresizingMaskIntoConstraints = false
+        modificaVerifcicaButton.addTarget(self, action: #selector(wip), for: .touchUpInside)
         view.addSubview(modificaVerifcicaButton)
         
         

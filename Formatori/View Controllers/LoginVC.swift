@@ -85,7 +85,7 @@ extension LoginVC {
         
         
         emailTextField = UITextField()
-        emailTextField.placeholder = "E-Mail"
+        emailTextField.placeholder = "Nome"
         emailTextField.backgroundColor = UIColor.darkGray.lighter(by: 7)
         emailTextField.autocapitalizationType = .none
         emailTextField.borderStyle = .roundedRect

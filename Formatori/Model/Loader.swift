@@ -70,7 +70,15 @@ class Loader {
                 let json = try JSONDecoder().decode(Response.self, from: data)
                 if json.code == 0 {
                     let verifiche = json.verifiche
-                    completion?(true, nil, verifiche)
+                    
+                    if development == false, let vers = verifiche?.filter({ $0.dev_mode != 1 }) {
+                        completion?(true, nil, vers)
+                    } else {
+                        completion?(true, nil, verifiche)
+                    }
+                    
+                    
+                    
                 } else {
                     completion?(false, json.message, nil)
                 }

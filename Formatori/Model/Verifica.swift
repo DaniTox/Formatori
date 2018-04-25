@@ -17,7 +17,7 @@ class Verifica : Codable {
     var classe : String?
     var date : Date?
     var note : String?
-    
+    var dev_mode : Int?
     
     var isEncoded : Bool? = false
     func encodeForServer() {

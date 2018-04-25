@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+var development : Bool = false
 
 var formatore : Formatore? {
     

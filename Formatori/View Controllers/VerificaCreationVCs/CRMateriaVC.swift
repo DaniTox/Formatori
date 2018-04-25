@@ -58,6 +58,7 @@ extension CRMateriaVC : UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = .clear
         }
         
+        
         return cell
     }
     
@@ -89,9 +90,11 @@ extension CRMateriaVC {
         tableView.backgroundColor = .clear
         tableView.separatorColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.layer.borderWidth = 0.5
+        tableView.layer.borderColor = UIColor.white.cgColor
         view.addSubview(tableView)
         
-        [ tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+        [ tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
           tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
           tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
           tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
